@@ -3,8 +3,8 @@ import graphics as g
 import random
 import math
 
-width = 700
-height = 500
+width = 1000
+height = 700
 win = g.GraphWin("Window", width, height)
 colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow"]
 
@@ -50,7 +50,11 @@ def draw_rectangle():
     rec_width = float(input("Width: "))
     rec_length = float(input("Length: "))
     rectangle = g.Rectangle(g.Point((width / 2) - (rec_width / 2), (height / 2) - (rec_length / 2)), g.Point((width / 2)
-                            + (rec_width / 2), (height / 2) + (rec_length / 2)))
+                                                                                                             + (
+                                                                                                                         rec_width / 2),
+                                                                                                             (
+                                                                                                                         height / 2) + (
+                                                                                                                         rec_length / 2)))
     rectangle.draw(win)
 
 
@@ -64,10 +68,10 @@ def blue_circle():
 
 def ten_lines():
     for i in range(10):
-        message = g.Text(g.Point(100, 100), "Click on first g.Point")
+        message = g.Text(g.Point(100, 100), "Click on first point")
         message.draw(win)
         p1 = win.getMouse()
-        message.setText("Click on second g.Point")
+        message.setText("Click on second point")
         p2 = win.getMouse()
         line = g.Line(p1, p2)
         line.draw(win)
@@ -107,15 +111,82 @@ def five_click_stick_figure():
     body = g.Line(g.Point(mouse1.getX(), mouse1.getY() + radius), g.Point(mouse1.getX(), mouse3.getY()))
     body.draw(win)
 
+    symmetry = mouse1.getX()
+
     mouse4 = win.getMouse()
-    print(mouse4, mouse1.getX())
-    arms = g.Line(g.Point(mouse4.getX(), (mouse1.getY() + radius) + 10),
-                  g.Point((mouse4.getX()) + ((mouse4.getX() + mouse3.getX()) / 4), (mouse1.getY() + radius) + 10))
+    arm_distance = (symmetry - mouse4.getX()) * 2
+    arms = g.Line(g.Point(mouse4.getX(), mouse4.getY()), g.Point(mouse4.getX() + arm_distance, mouse4.getY()))
     arms.draw(win)
 
     mouse5 = win.getMouse()
+    leg_distance = (symmetry - mouse5.getX()) * 2
     leg_l = g.Line(g.Point(mouse1.getX(), mouse3.getY()), g.Point(mouse5.getX(), mouse5.getY()))
     leg_l.draw(win)
-    leg_r = g.Line(g.Point(mouse1.getX(), mouse3.getY()), g.Point(mouse5.getY() - mouse1.getY() - mouse1.getY()
-                                                                  , mouse5.getY()))
+    leg_r = g.Line(g.Point(mouse1.getX(), mouse3.getY()), g.Point(mouse5.getX() + leg_distance, mouse5.getY()))
     leg_r.draw(win)
+
+
+def plot_rainfall():
+    # input boxes
+    input1 = g.Entry(g.Point(100, 50), 5)
+    input1.draw(win)
+    input2 = g.Entry(g.Point(200, 50), 5)
+    input2.draw(win)
+    input3 = g.Entry(g.Point(300, 50), 5)
+    input3.draw(win)
+    input4 = g.Entry(g.Point(400, 50), 5)
+    input4.draw(win)
+    input5 = g.Entry(g.Point(500, 50), 5)
+    input5.draw(win)
+    input6 = g.Entry(g.Point(600, 50), 5)
+    input6.draw(win)
+    input7 = g.Entry(g.Point(700, 50), 5)
+    input7.draw(win)
+
+    # input labels
+    input_label1 = g.Text(g.Point(100, 25), "Day 1")
+    input_label1.draw(win)
+    input_label2 = g.Text(g.Point(200, 25), "Day 2")
+    input_label2.draw(win)
+    input_label3 = g.Text(g.Point(300, 25), "Day 3")
+    input_label3.draw(win)
+    input_label4 = g.Text(g.Point(400, 25), "Day 4")
+    input_label4.draw(win)
+    input_label5 = g.Text(g.Point(500, 25), "Day 5")
+    input_label5.draw(win)
+    input_label6 = g.Text(g.Point(600, 25), "Day 6")
+    input_label6.draw(win)
+    input_label7 = g.Text(g.Point(700, 25), "Day 7")
+    input_label7.draw(win)
+
+    # apply button
+    button_apply = g.Rectangle(g.Point(800, 35), g.Point(875, 65))
+    button_apply.draw(win)
+    text_apply = g.Text(g.Point(837, 50), "Apply")
+    text_apply.draw(win)
+
+    # axis lines
+    line_y = g.Line(g.Point(50, 100), g.Point(50, 500))
+    line_y.draw(win)
+    line_x = g.Line(g.Point(50, 500), g.Point(850, 500))
+    line_x.draw(win)
+
+    # bars
+    while 1 == 1:
+        m = win.getMouse()
+        if 800 <= m.getX() <= 875 and 35 <= m.getY() <= 65:
+
+            bar1 = g.Rectangle(g.Point(50, 500), g.Point(150, 500 - int(input1.getText())))
+            bar1.draw(win)
+            bar2 = g.Rectangle(g.Point(150, 500), g.Point(250, 500 - int(input2.getText())))
+            bar2.draw(win)
+            bar3 = g.Rectangle(g.Point(250, 500), g.Point(350, 500 - int(input3.getText())))
+            bar3.draw(win)
+            bar4 = g.Rectangle(g.Point(350, 500), g.Point(450, 500 - int(input4.getText())))
+            bar4.draw(win)
+            bar5 = g.Rectangle(g.Point(450, 500), g.Point(550, 500 - int(input5.getText())))
+            bar5.draw(win)
+            bar6 = g.Rectangle(g.Point(550, 500), g.Point(650, 500 - int(input6.getText())))
+            bar6.draw(win)
+            bar7 = g.Rectangle(g.Point(650, 500), g.Point(750, 500 - int(input7.getText())))
+            bar7.draw(win)
