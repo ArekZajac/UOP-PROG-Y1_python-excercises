@@ -1,4 +1,5 @@
 # exercises week 03
+
 import graphics as g
 import random
 import math
@@ -50,11 +51,7 @@ def draw_rectangle():
     rec_width = float(input("Width: "))
     rec_length = float(input("Length: "))
     rectangle = g.Rectangle(g.Point((width / 2) - (rec_width / 2), (height / 2) - (rec_length / 2)), g.Point((width / 2)
-                                                                                                             + (
-                                                                                                                         rec_width / 2),
-                                                                                                             (
-                                                                                                                         height / 2) + (
-                                                                                                                         rec_length / 2)))
+                            + (rec_width / 2),(height / 2) + (rec_length / 2)))
     rectangle.draw(win)
 
 
