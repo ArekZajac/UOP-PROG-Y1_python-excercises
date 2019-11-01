@@ -127,6 +127,7 @@ def graphical_rainfall_chart():
     plt.bar(positions, rain_amount)
     plt.xticks(positions, places)
     plt.show()
+    f.close()
 
 
 def wc():
