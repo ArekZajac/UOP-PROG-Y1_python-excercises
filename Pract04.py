@@ -29,16 +29,7 @@ def email():
 
 def grade_test():
     grade = int(input("Enter grade:"))
-    if 10 >= grade >= 8:
-        print("A")
-    elif 7 >= grade >= 6:
-        print("B")
-    elif 5 >= grade >= 4:
-        print("C")
-    elif 3 >= grade >= 0:
-        print("F")
-    else:
-        print("Invalid grade")
+    print('FFFFCCBBAAA'[grade])
 
 
 def graphic_letters():
@@ -63,9 +54,11 @@ def sing_a_song():
 
 
 def exchange_table():
-    print("€       £")
-    for u in range(20):
-        print((u + 1), "     ", round((u + 1) * 1.13, 2))
+    print("€         £")
+    for i in range(20):
+        i = float(i)
+        pound = i * 1.13
+        print("{0:0.2f}{1:10.2f}".format(i, pound))
 
 
 def make_acronym():
@@ -78,7 +71,7 @@ def name_to_number():
     name = input("Enter a name: ")
     output = 0
     for i in name.lower():
-        output = output + (ord(i)-96)
+        output = output + (ord(i) - 96)
     print(output)
 
 

@@ -4,12 +4,12 @@
 import math
 
 
-def circumference_of_circle():
-    print(2 * math.pi * float(input("Radius: ")))
+def circumference_of_circle(radius):
+    return 2 * math.pi * radius
 
 
-def area_of_circle():
-    print(math.pi * (float(input("Radius: ")) ** 2))
+def area_of_circle(radius):
+    print(math.pi * radius ** 2)
 
 
 def cost_of_pzza():
@@ -24,12 +24,8 @@ def slop_of_line():
     print("Slope: ", (y2 - y1) / (x2 - x1))
 
 
-def distance_between_points():
-    x1 = float(input("x1: "))
-    y1 = float(input("y1: "))
-    x2 = float(input("x2: "))
-    y2 = float(input("y2: "))
-    print("Distance: ", math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2))
+def distance_between_points(p1, p2):
+    return math.sqrt((p1.getX() - p2.getX()) ** 2 + (p1.getY() - p2.getY()) ** 2)
 
 
 def travel_statistics():
