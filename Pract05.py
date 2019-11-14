@@ -13,7 +13,6 @@ def circle_info(radius):
 def draw_circle(win, centre, radius, colour):
     circle = g.Circle(centre, radius)
     circle.setFill(colour)
-    circle.setWidth(2)
     circle.draw(win)
 
 
