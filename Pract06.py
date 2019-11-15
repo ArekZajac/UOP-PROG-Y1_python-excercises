@@ -87,6 +87,12 @@ def draw_patch_window(patch):
         patch_zero(window)
     elif patch == 1:
         patch_one(window)
+    elif patch == 2:
+        patch_two(window)
+    elif patch == 3:
+        patch_three(window)
+    elif patch == 6:
+        patch_six(window)
     elif patch == 9:
         patch_nine(window)
 
@@ -119,9 +125,46 @@ def patch_one(window):
 
 
 def patch_two(window):
-    anchor = g.Point(250, 475)
-    for i in range(10):
-        
+    anchor = g.Point(300, 550)
+    for i in range(11):
+        circle = g.Circle(g.Point(anchor.getX(), anchor.getY() - (i * 25)), i * 25)
+        circle.draw(window)
+
+
+def patch_three(window):
+    print()
+
+
+def patch_four(window):
+    print()
+
+
+def patch_five(window):
+    print()
+
+
+def patch_six(window):
+    for i in range(11):
+        p1 = g.Point(50 + (i * 50), 50)
+        p2 = g.Point(600 - p1.getX(), 600 - p1.getY())
+        line = g.Line(p1, p2)
+        line.draw(window)
+    for i in range(11):
+        p1 = g.Point(50, 50 + (i * 50))
+        p2 = g.Point(600 - p1.getX(), 600 - p1.getY())
+        line = g.Line(p1, p2)
+        line.draw(window)
+
+
+def patch_seven(window):
+    print()
+
+
+def patch_eight(window):
+    anchor = g.Point(100, 100)
+    for i in range(5):
+        for j in range(5):
+            circle = g.Circle()
 
 
 def patch_nine(window):
