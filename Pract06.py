@@ -93,6 +93,10 @@ def draw_patch_window(patch):
         patch_three(window)
     elif patch == 6:
         patch_six(window)
+    elif patch == 7:
+        patch_seven(window)
+    elif patch == 8:
+        patch_eight(window)
     elif patch == 9:
         patch_nine(window)
 
@@ -161,10 +165,12 @@ def patch_seven(window):
 
 
 def patch_eight(window):
-    anchor = g.Point(100, 100)
     for i in range(5):
         for j in range(5):
-            circle = g.Circle()
+            circle = g.Circle(g.Point(100 + (i * 100), 100 + (j * 100)), 50)
+            if j % 2 == 0:
+                circle.setFill('black')
+            circle.draw(window)
 
 
 def patch_nine(window):
@@ -173,3 +179,5 @@ def patch_nine(window):
         for j in range(10):
             if i == 9 - j:
                 block_fill(anchor, window, i, j)
+
+
