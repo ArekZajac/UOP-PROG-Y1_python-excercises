@@ -179,5 +179,3 @@ def patch_nine(window):
         for j in range(10):
             if i == 9 - j:
                 block_fill(anchor, window, i, j)
-
-

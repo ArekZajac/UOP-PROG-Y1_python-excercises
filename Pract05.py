@@ -107,8 +107,5 @@ def independent_stick_figure(window, origin_x, origin_y):
 
 def draw_stick_figure_family():
     window = g.GraphWin('draw_stick_figure_family', 1000, 700)
-    # while 1 == 1:
-    #     m = window.getMouse()
-    #     independent_stick_figure(window, m.getX(), m.getY())
     while 1 == 1:
         independent_stick_figure(window, randint(0, 1000), randint(0, 700))

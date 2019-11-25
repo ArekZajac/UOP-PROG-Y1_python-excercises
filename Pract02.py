@@ -12,7 +12,7 @@ def area_of_circle(radius):
     print(math.pi * radius ** 2)
 
 
-def cost_of_pzza():
+def cost_of_pizza():
     print("Cost: ", 1.5 * (math.pi * ((float(input("Diameter: "))) / 2) ** 2), "p")
 
 
@@ -29,10 +29,10 @@ def distance_between_points(p1, p2):
 
 
 def travel_statistics():
-    avgSpeed = float(input("Average Speed: "))
+    avg_speed = float(input("Average Speed: "))
     dur = float(input("Duration: "))
-    print("Distance", avgSpeed * dur)
-    print("Fuel use: ", (avgSpeed * dur) / 5)
+    print("Distance", avg_speed * dur)
+    print("Fuel use: ", (avg_speed * dur) / 5)
 
 
 def sum_of_numbers():
@@ -46,12 +46,12 @@ def sum_of_numbers():
 def average_of_number():
     amount = int(input("Amount: "))
     numbers = []
-    sum = 0
+    total = 0
     for a in range(amount):
         numbers.append(float(input("Enter number: ")))
     for f in numbers:
-        sum = sum + f
-    print("Average: ", sum / len(numbers))
+        total = total + f
+    print("Average: ", total / len(numbers))
 
 
 def select_coins():
